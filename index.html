@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script type="module" src="js/script.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-gradient" style="background:#752323;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">App Map</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                </ul>
+                <form class="d-flex">
+                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+                        data-bs-target="#modalInfo">INFO</button>
+                    <button class="btn btn-danger mx-3" id="logout">Log out</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container mt-4">
+        <div class="card shadow-lg border-0 rounded-4">
+            <div class="card-body">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Search location..." id="searchLocation">
+                    <button class="btn btn-secondary" id="btnSearch">Search</button>
+                </div>
+                <div id="map" class="my-5">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- Modal de info de la app -->
+<div class="modal fade" id="modalInfo" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="modalInfoLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header text-white bg-gradient" style="background:#752323;">
+                <h5 class="modal-title" id="modalInfoLabel">Functionality</h5>
+            </div>
+            <div class="modal-body">
+                <h5>What is in index?</h5>
+                <ul>
+                    <li>We are using <strong>leafletjs (Open source and free)</strong> to create the map view.</li>
+                    <li>The map in the coordenates (13.789555279605084, -89.35745218093535).</li>
+                    <li>By clicking we can add a bookmark.</li>
+                    <li>By hovering we can see the location of the marker</li>
+                    <li>We can drag the markers to new positions.</li>
+                    <li>We can search for locations, and when we click the search button, the map moves to the location
+                        and places a marker.</li>
+                    <li>We cannot access the index without first logging in, even if we change the URL to index.html
+                    </li>
+                    <li>We can log out the index</li>
+                </ul>
+                <h5>What is in login?</h5>
+                <ul>
+                    <li>We can log in after register</li>
+                    <li>Incorrect credentials are validate</li>
+                    <li>Fields are required</li>
+                </ul>
+                <h5>What is in register?</h5>
+                <ul>
+                    <li>We can register a user</li>
+                    <li>You can not register a user with the same username</li>
+                    <li>We are using localstorage to save the users</li>
+                    <li>Fields are required</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</html>
